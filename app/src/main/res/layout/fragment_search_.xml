@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Search_Fragment">
+    tools:context="search.Search_Fragment">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/Search_constrainlayout"
@@ -33,8 +33,8 @@
   </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-  <androidx.constraintlayout.widget.ConstraintLayout
-      android:id="@+id/constraintlayout"
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/search_RecyclerView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_marginTop="70dp"
@@ -47,7 +47,7 @@
       app:layout_constraintVertical_bias="1.0">
 
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.recyclerview.widget.RecyclerView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
+
+    val likebox: ArrayList<Search_Item> = ArrayList()
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val tabbar = listOf("검색" , "내 보관함")
     override fun onCreate(savedInstanceState: Bundle?) {
