@@ -19,7 +19,10 @@ class Box_Fragment : Fragment() {
 
     //좋아요를 누르면 저장하는곳
     private var likebox: List<Search_Item> = listOf()
-
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Scontext = context
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

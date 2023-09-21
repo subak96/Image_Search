@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/Itemlist"
+    android:layout_margin="5dp"
+    android:clickable="true"
+    android:focusable="true"
     >
 
 
@@ -11,14 +15,10 @@
         android:id="@+id/search_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:maxHeight="200dp"
         android:minHeight="40dp"
         android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </ImageView>
+        ></ImageView>
 
     <ImageView
         android:id="@+id/like"
@@ -36,28 +36,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
         android:duplicateParentState="true"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_image">
+        tools:layout_editor_absoluteY="60dp">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="7dp"
-            android:gravity="center"
-            android:text="name"
             android:ellipsize="end"
+            android:gravity="center"
             android:maxLines="1"
+            android:text="name"
             android:textSize="20sp"
-            android:textStyle="bold"
-            >
-        </TextView>
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/clock"
             android:layout_width="wrap_content"
@@ -65,8 +59,8 @@
             android:layout_marginLeft="7dp"
             android:layout_marginTop="7dp"
             android:gravity="center"
-            android:text="clock"
             android:maxLines="1"
+            android:text="clock"
             android:textSize="15sp"
 
             >

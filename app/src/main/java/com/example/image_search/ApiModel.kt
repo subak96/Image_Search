@@ -4,7 +4,6 @@ data class ApiModel (
 
     val documents:ArrayList<Documents>,
 
-
     val meta:Meta
 
         ){
