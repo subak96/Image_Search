@@ -27,9 +27,7 @@ class Search_Adapter(private val Scontext: Context) : RecyclerView.Adapter<Searc
         var image: ImageView = binding.searchImage
         var like: ImageView = binding.like
         var title: TextView = binding.title
-        var clock: TextView = binding.clock
         var itemlist: ConstraintLayout = binding.Itemlist
-
 
         init {
             like.visibility = View.GONE
@@ -44,8 +42,12 @@ class Search_Adapter(private val Scontext: Context) : RecyclerView.Adapter<Searc
             item.like = !item.like
 
             if (item.like){
-                (Scontext as MainActivity)
+                (Scontext as MainActivity).Onliked(item)
             }
+            else{
+                (Scontext as MainActivity).Noliked(item)
+            }
+            notifyDataSetChanged()
         }
     }
 
@@ -57,16 +59,15 @@ class Search_Adapter(private val Scontext: Context) : RecyclerView.Adapter<Searc
     override fun getItemCount() = Item.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val glideItem = Item[position]
+        val viewItem = Item[position]
 
         Glide.with(Scontext)
-            .load(glideItem.uri)
+            .load(viewItem .uri)
             .into(holder.image)
+        holder.like.visibility = if (viewItem .like) View.VISIBLE else View.GONE
+        holder.title.text = viewItem .title
+
     }
-
-
-
-
 
 }
 

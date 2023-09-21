@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="search.Search_Fragment">
+    >
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/Search_constrainlayout"
@@ -16,20 +16,34 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent">
 
-
-    <SearchView
-        android:id="@+id/Search_View"
-        android:layout_width="300dp"
+    <EditText
+        android:id="@+id/search_EditText"
+        android:layout_width="250dp"
         android:layout_height="30dp"
-        android:iconifiedByDefault="false"
+        android:layout_marginStart="30dp"
+        android:gravity="center"
+        android:hint="검색어를 입력해주세요."
         android:background="@drawable/background_search"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-    </SearchView>
+        app:layout_constraintTop_toTopOf="parent">
 
+    </EditText>
+
+    <TextView
+        android:id="@+id/search_Text"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:background="@drawable/background_search"
+        android:gravity="center"
+        android:text="검색"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/search_EditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/search_EditText"
+        app:layout_constraintTop_toTopOf="@+id/search_EditText">
+
+    </TextView>
   </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -37,7 +51,7 @@
       android:id="@+id/search_RecyclerView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_marginTop="70dp"
+      android:layout_marginTop="80dp"
       android:layout_marginBottom="60dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +59,6 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="1.0">
-
 
   </androidx.recyclerview.widget.RecyclerView>
 

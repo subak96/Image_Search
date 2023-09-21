@@ -40,16 +40,16 @@ class Box_Adapter( var Scontext: Context) : RecyclerView.Adapter<RecyclerView.Vi
         var image: ImageView = binding.searchImage
         var like: ImageView = binding.like
         var title: TextView = binding.title
-        var clock: TextView = binding.clock
         var itemlist: ConstraintLayout = binding.Itemlist
 
         init {
             like.visibility = View.GONE
             itemlist.setOnClickListener {
                 val position = adapterPosition
+                (Scontext as MainActivity).Noliked(Item[position])
                 if (position != RecyclerView.NO_POSITION){
-
-
+                    Item.removeAt(position)
+                    notifyDataSetChanged()
 
                 }
             }

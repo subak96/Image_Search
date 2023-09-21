@@ -1,5 +1,6 @@
 package com.example.image_search
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
@@ -51,5 +52,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
         )
+    }
+    fun Onliked(item: Search_Item){
+        if (!likebox.contains(item)){
+            likebox.add(item)
+        }
+    }
+    fun Noliked(item: Search_Item){
+        likebox.remove(item)
+    }
+    fun savesearch (context: Context, query: String){
+        val save = context.getSharedPreferences(Constants.NAME, Context.MODE_PRIVATE)
+        save.edit().putString(Constants.KEY, query).apply()
+    }
+    fun getsearch (context: Context): String? {
+        val get = context.getSharedPreferences(Constants.NAME,Context.MODE_PRIVATE )
+        return get.getString(Constants.KEY, null)
     }
 }
