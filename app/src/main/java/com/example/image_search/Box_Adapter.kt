@@ -27,7 +27,7 @@ class Box_Adapter( var Scontext: Context) : RecyclerView.Adapter<RecyclerView.Vi
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         Glide.with(Scontext)
-            .load(Item[position].uri)
+            .load(Item[position].url)
             .into((holder as ViewHolder).image)
 
         holder.title.text = Item[position].title

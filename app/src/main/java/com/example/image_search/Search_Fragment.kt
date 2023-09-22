@@ -37,7 +37,6 @@ private var search_Item: ArrayList<Search_Item> = ArrayList()
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
       binding = FragmentSearchBinding.inflate(inflater, container, false)
 
         View()
@@ -56,7 +55,7 @@ private var search_Item: ArrayList<Search_Item> = ArrayList()
 //    }
 
    private fun View(){
-       gridmanager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+       gridmanager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
        binding.searchRecyclerView.layoutManager = gridmanager
        searchAdapter = Search_Adapter(Scontext)
        binding.searchRecyclerView.adapter = searchAdapter
@@ -105,6 +104,7 @@ private var search_Item: ArrayList<Search_Item> = ArrayList()
                 }
 
                 override fun onFailure(call: Call<ApiModel?>, t: Throwable) {
+                    Log.e("API Error", "API 호출 실패: ${t.message}")
                 }
             })
     }

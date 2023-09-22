@@ -18,6 +18,7 @@ class Search_Adapter(private val Scontext: Context) : RecyclerView.Adapter<Searc
 
     var Item = ArrayList<Search_Item>()
 
+
     fun clear() {
         Item.clear()
         notifyDataSetChanged()
@@ -62,7 +63,7 @@ class Search_Adapter(private val Scontext: Context) : RecyclerView.Adapter<Searc
         val viewItem = Item[position]
 
         Glide.with(Scontext)
-            .load(viewItem .uri)
+            .load(viewItem .url)
             .into(holder.image)
         holder.like.visibility = if (viewItem .like) View.VISIBLE else View.GONE
         holder.title.text = viewItem .title
